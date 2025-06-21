@@ -13,7 +13,7 @@ int main() {
 
     program("file1.txt");
     program("file2.txt");
-    program("file3.txt");\
+    program("file3.txt");
     
     cout << "Завершаю работу..." << endl;
 
