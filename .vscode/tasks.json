@@ -1,0 +1,32 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "g++ Сборка",
+            "command": "C:/Program Files (x86)/msys2/ucrt64/bin/g++.exe",
+            "args": [
+                "-fexec-charset=UTF-8",
+                "-finput-charset=UTF-8",
+                "-fdiagnostics-color=always",
+                "-Wall",
+                "-g",
+                "main.cpp",
+                "str.h",
+                "str.cpp",
+                "-o",
+                "main.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}",
+                "env": {
+                    "LC_ALL": "ru_RU.UTF-8"
+                }
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build"
+        }
+    ],
+    "version": "2.0.0"
+}
