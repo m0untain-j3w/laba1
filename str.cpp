@@ -9,7 +9,7 @@ String::String(const char* string, char mark) {
     readLine(string);
 }
 /* Деструктор */
-String::~String() {}
+    String::~String() {}
 /* Удаляет символы между указанными скобками*/
 void String::removeBetweenBrackets() {
     bool between_brackets = false;

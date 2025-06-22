@@ -14,8 +14,6 @@ int main() {
     program("file1.txt");
     program("file2.txt");
     program("file3.txt");
-    
-    cout << "Завершаю работу..." << endl;
 
     return 0;
 }
@@ -23,16 +21,23 @@ int main() {
 void program(const char* file_name) {
 
     String string;
-    ifstream file(file_name);
-    if (!file.is_open()) {
-        cerr << "Ошибка при открытии файла..." << endl;
+    ifstream file_in(file_name);
+    ofstream file_out("output.txt", ios::app);
+    if (!file_in.is_open()) {
+        cerr << "Ошибка при открытии входного файла..." << endl;
+        return;
+    }
+    if (!file_out.is_open()) {
+        cerr << "Ошибка при открытии выходного файла..." << endl;
         return;
     }
     
-    string.readMarkerFromFile(file);
-    string.readLineFromFile(file);
-    file.close();
+    string.readMarkerFromFile(file_in);
+    string.readLineFromFile(file_in);
+    file_in.close();
     
     string.removeBetweenBrackets();
-    cout << string.getString() << endl;
+    file_out << "Полученная строка: " << endl;
+    file_out << string.getString() << "\n\n";
+    file_out.close();
 }
