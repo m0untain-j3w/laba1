@@ -14,6 +14,9 @@ int main() {
     program("file1.txt");
     program("file2.txt");
     program("file3.txt");
+    program("file4.txt");
+    program("file5.txt");
+    program("file6.txt");
 
     return 0;
 }
@@ -33,11 +36,22 @@ void program(const char* file_name) {
     }
     
     string.readMarkerFromFile(file_in);
+    if (!string.getMarker()) {
+        file_out << "Пустой маркер! Пропускаю файл..." << endl;
+        file_out << "-----------" << endl;
+        return;
+    }
     string.readLineFromFile(file_in);
+    if (!string.getString()[0]) {
+        file_out << "Получена пустая строка!" << endl;
+        file_out << "-----------" << endl;
+        return;
+    }
     file_in.close();
     
     string.removeBetweenBrackets();
     file_out << "Полученная строка: " << endl;
-    file_out << string.getString() << "\n\n";
+    file_out << string.getString() << endl;
+    file_out << "-----------" << endl;
     file_out.close();
 }

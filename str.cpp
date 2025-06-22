@@ -3,14 +3,17 @@
 #define BUFFER_SIZE 256
 
 /* Конструкторы */
-String::String() {}
+String::String() {
+    str[0] = '\0';
+    mrk = '\0';
+};
 String::String(const char* string, char mark) {
     mrk = mark;
     readLine(string);
 }
 /* Деструктор */
     String::~String() {}
-/* Удаляет символы между указанными скобками*/
+/* Удаляет символы между указанными скобками */
 void String::removeBetweenBrackets() {
     bool between_brackets = false;
     int write_index = 0;
@@ -35,7 +38,7 @@ void String::removeBetweenBrackets() {
 
     str[write_index] = '\0';
 }
-/* Запись маркера*/
+/* Запись маркера */
 void String::readMarkerFromFile(std::ifstream& file) { 
     char string[BUFFER_SIZE];
     file.getline(string, BUFFER_SIZE);
