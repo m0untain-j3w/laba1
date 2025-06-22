@@ -47,11 +47,12 @@ void program(const char* file_name) {
         file_out << "-----------" << endl;
         return;
     }
-    file_in.close();
     
     string.removeBetweenBrackets();
     file_out << "Полученная строка: " << endl;
     file_out << string.getString() << endl;
     file_out << "-----------" << endl;
+    
+    file_in.close();
     file_out.close();
 }
