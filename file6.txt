@@ -1,2 +1,2 @@
 (
-Дан маркер, а в строке его нет
+there is a bracket, but no string
